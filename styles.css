@@ -70,9 +70,17 @@ label {
   text-align: left;
 }
 
+fieldset label {
+  width: 85px;
+} 
+
+fieldset legend {
+  padding: 0 5px;
+}
+
 fieldset {
   padding: 10px 5px;
-  margin: 20px auto;
+  margin: 10px auto;
   
 }
 
@@ -101,6 +109,7 @@ legend {
   padding: 0;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 15px;
 }
 
 .user-input-box input, .user-input-box select {
@@ -160,7 +169,3 @@ legend {
 .container {
   background-image: repeating-linear-gradient(9deg, hsl(303,0%,10%) 0px, hsl(303,0%,10%) 10px,transparent 10px, transparent 12px),repeating-linear-gradient(109deg, hsl(303,0%,10%) 0px, hsl(303,0%,10%) 10px,transparent 10px, transparent 12px),repeating-linear-gradient(225deg, hsl(303,0%,10%) 0px, hsl(303,0%,10%) 10px,transparent 10px, transparent 12px),linear-gradient(90deg, hsla(22,0%,28%,1),hsla(37,0%,28%,1));
 }
-
-
-
-
