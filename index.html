@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JUNE 2024 - OPK SCHEDULING FORM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background"></div> <!-- This div is used for background -->
+  <div class="container">
+    
+    <H1 class="form-title">OPK SCHEDULING</H1>
+    <form method="post" action="https://script.google.com/macros/s/AKfycbwSR-9MFWKl-_mQLIIlhjHYV45hwgBb4hQmnkFGiWAe6c0hf0tY-f_jOIPDjF_kUi9e0A/exec" name="scheduling-form">
+      <div class="main-user-info">
+
+        <div class="user-input-box">
+          <label for="bigoName">Bigo Name: </label>
+          <input type="text"
+                  id="bigoName"
+                  name="bigoName"
+                  placeholder="Enter your bigo name">
+        </div>
+        <div class="user-input-box">
+          <label for="bigoID">Bigo ID: </label>
+          <input type="text"
+                  id="bigoID"
+                  name="bigoID"
+                  placeholder="Enter your bigo ID">
+        </div>
+        <div class="user-input-box">
+          <label for="bigoAgency">Agency: </label>
+          <select name="bigoAgency" id="bigoAgency" onchange="showInputField(this);">
+            <option value="">Choose your agency name</option>
+            <option value="PH-SPARTAN2">PH-SPARTAN2</option>
+            <option value="PH-WALTON2">PH-WALTON2</option>
+            <option value="PH-RADICAL2">PH-RADICAL2</option>
+            <option value="PH-RPXI2">PH-RPXI2</option>
+            <option value="other">Other</option>
+          </select>
+          <!--WILL POP UP IF OTHER IS SELECTED - TO INPUT AGENCY-->
+          <input type="text" id="otherOption" name="otherOption" placeholder="Enter your agency name" style="display:none; margin-left: 5px;">
+        </div>
+
+        <div class="dateSelection">
+          <fieldset>
+            <legend>Select your 1st PK date</legend>
+            <div class="user-input-box">
+              <label for="pkDate1">Date: </label>
+              <input type="date"
+                      id="pkDate1"
+                      name="pkDate1"
+                      min="2024-06-01" max="2024-06-30">
+            </div>
+            <div class="user-input-box">
+              <label for="pkTime1">Time: </label>
+              <select name="pkTime1" id="pkTime1">
+                <option value="">Choose a date</option>
+                <option value="20:00-20:15">20:00-20:15</option>
+                <option value="20:15-20:30">20:15-20:30</option>
+                <option value="20:30-20:45">20:30-20:45</option>
+                <option value="20:45-21:00">20:45-21:00</option>
+                <option value="21:00-21:15">21:00-21:15</option>
+                <option value="21:15-21:30">21:15-21:30</option>
+                <option value="21:30-21:45">21:30-21:45</option>
+                <option value="21:45-22:00">21:45-22:00</option>
+                <option value="22:00-22:15">22:00-22:15</option>
+                <option value="22:15-22:30">22:15-22:30</option>
+                <option value="22:30-22:45">22:30-22:45</option>
+                <option value="22:45-23:00">22:45-23:00</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Select your 2nd PK date</legend>
+            <div class="user-input-box">
+              <label for="pkDate2">Date: </label>
+              <input type="date"
+                      id="pkDate2"
+                      name="pkDate2"
+                      min="2024-06-01" max="2024-06-30">
+            </div>
+            <div class="user-input-box">
+              <label for="pkTime2">Time: </label>
+              <select name="pkTime2" id="pkTime2">
+                <option value="">Choose a date</option>
+                <option value="20:00-20:15">20:00-20:15</option>
+                <option value="20:15-20:30">20:15-20:30</option>
+                <option value="20:30-20:45">20:30-20:45</option>
+                <option value="20:45-21:00">20:45-21:00</option>
+                <option value="21:00-21:15">21:00-21:15</option>
+                <option value="21:15-21:30">21:15-21:30</option>
+                <option value="21:30-21:45">21:30-21:45</option>
+                <option value="21:45-22:00">21:45-22:00</option>
+                <option value="22:00-22:15">22:00-22:15</option>
+                <option value="22:15-22:30">22:15-22:30</option>
+                <option value="22:30-22:45">22:30-22:45</option>
+                <option value="22:45-23:00">22:45-23:00</option>
+              </select>
+            </div>
+          </fieldset>
+        </div>
+        
+      </div>
+
+      <div class="form-submit-btn">
+        <input type="submit" value="Submit" class="bn632-hover bn25">
+      </div>
+
+    </form>
+  </div>
+  
+
+  <script>
+    function showInputField(select) {
+        var inputField = document.getElementById("otherOption");
+        inputField.style.display = select.value === "other" ? "inline" : "none";
+    }
+  </script>
+  <script src="main.js"></script>
+
+</body>
+</html>
