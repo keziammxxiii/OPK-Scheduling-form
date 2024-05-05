@@ -19,18 +19,18 @@
           <input type="text"
                   id="bigoName"
                   name="bigoName"
-                  placeholder="Enter your bigo name">
+                  placeholder="Enter your bigo name" required>
         </div>
         <div class="user-input-box">
           <label for="bigoID">Bigo ID: </label>
           <input type="text"
                   id="bigoID"
                   name="bigoID"
-                  placeholder="Enter your bigo ID">
+                  placeholder="Enter your bigo ID" required>
         </div>
         <div class="user-input-box">
           <label for="bigoAgency">Agency: </label>
-          <select name="bigoAgency" id="bigoAgency" onchange="showInputField(this);">
+          <select name="bigoAgency" id="bigoAgency" required onchange="showInputField(this);">
             <option value="">Choose your agency name</option>
             <option value="PH-SPARTAN2">PH-SPARTAN2</option>
             <option value="PH-WALTON2">PH-WALTON2</option>
@@ -44,18 +44,20 @@
 
         <div class="dateSelection">
           <fieldset>
-            <legend>Select your 1st PK date</legend>
+            <legend> Select your 1st PK date </legend>
             <div class="user-input-box">
               <label for="pkDate1">Date: </label>
               <input type="date"
                       id="pkDate1"
                       name="pkDate1"
-                      min="2024-06-01" max="2024-06-30">
+                      min="2024-06-01" max="2024-06-30" required>
+              <input type="hidden" id="existingScheduleData" value="<?= JSON.stringify(getExistingScheduleData()) ?>">
+
             </div>
             <div class="user-input-box">
               <label for="pkTime1">Time: </label>
-              <select name="pkTime1" id="pkTime1">
-                <option value="">Choose a date</option>
+              <select name="pkTime1" id="pkTime1" required>
+                <option value="">Select a time slot</option>
                 <option value="20:00-20:15">20:00-20:15</option>
                 <option value="20:15-20:30">20:15-20:30</option>
                 <option value="20:30-20:45">20:30-20:45</option>
@@ -69,6 +71,8 @@
                 <option value="22:30-22:45">22:30-22:45</option>
                 <option value="22:45-23:00">22:45-23:00</option>
               </select>
+              <input type="hidden" id="existingScheduleData" value="<?= JSON.stringify(getExistingScheduleData()) ?>">
+
             </div>
           </fieldset>
           <fieldset>
@@ -78,12 +82,14 @@
               <input type="date"
                       id="pkDate2"
                       name="pkDate2"
-                      min="2024-06-01" max="2024-06-30">
+                      min="2024-06-01" max="2024-06-30" required>
+              <input type="hidden" id="existingScheduleData" value="<?= JSON.stringify(getExistingScheduleData()) ?>">
+
             </div>
             <div class="user-input-box">
               <label for="pkTime2">Time: </label>
-              <select name="pkTime2" id="pkTime2">
-                <option value="">Choose a date</option>
+              <select name="pkTime2" id="pkTime2" required>
+                <option value="">Select a time slot</option>
                 <option value="20:00-20:15">20:00-20:15</option>
                 <option value="20:15-20:30">20:15-20:30</option>
                 <option value="20:30-20:45">20:30-20:45</option>
@@ -97,11 +103,14 @@
                 <option value="22:30-22:45">22:30-22:45</option>
                 <option value="22:45-23:00">22:45-23:00</option>
               </select>
+              <input type="hidden" id="existingScheduleData" value="<?= JSON.stringify(getExistingScheduleData()) ?>">
             </div>
           </fieldset>
         </div>
         
       </div>
+
+      <div id="error-message" style="display: none; color: red; text-align: center;"></div>
 
       <div class="form-submit-btn">
         <input type="submit" value="Submit" class="bn632-hover bn25">
@@ -117,6 +126,7 @@
         inputField.style.display = select.value === "other" ? "inline" : "none";
     }
   </script>
+
   <script src="main.js"></script>
 
 </body>
