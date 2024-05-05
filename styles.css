@@ -66,13 +66,9 @@ body {
 }
 
 label {
-  width: 130px; /* Adjust the width as needed */
+  width: 100px; /* Adjust the width as needed */
   text-align: left;
 }
-
-fieldset label {
-  width: 85px;
-} 
 
 fieldset legend {
   padding: 0 5px;
@@ -81,7 +77,6 @@ fieldset legend {
 fieldset {
   padding: 10px 5px;
   margin: 10px auto;
-  
 }
 
 fieldset input, 
@@ -91,11 +86,17 @@ fieldset select,
 }
 
 .user-input-box label {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 400;
   margin-left: 10px;
   color: white;
 }
+
+fieldset .user-input-box label {
+  width: 80px;
+  font-size: 15px;
+  vertical-align: middle;
+} 
 
 legend {
   font-size: 15px;
